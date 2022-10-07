@@ -12,6 +12,7 @@
     }
     p{
       color: gray;
+      margin-left: 2em;
     }
     div-1{
       background-color: aquamarine;
@@ -19,9 +20,32 @@
       width:50%;
     }
     div-2{
-      background-color: blue;
+      background-color: rgb(82, 82, 219);
       float: right;
       width:50%;
+    }
+    .ulstyle {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #717a7a;
+    }
+    li {
+        float: left;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #4035a3;
     }
   </style>
   </head>
@@ -31,6 +55,13 @@
   <h1 style="font-family:Times New Roman;"><b>Introduction</b></h1>
 
   <body>
+    <ul class="ulstyle">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#studentportal">Student Portal</a></li>
+      </ul>
 
     <p>Taipei Tech campus is located at the apex of the Taipei Metro system. 
       Not only can <a href="#graduates">students</a> enjoy a world-class education at Taipei Tech, but they also gain the opportunity to enjoy the rich traditional culture that Taipei offers. Attractions such as Taipei 101, the Palace Museum, and the Chiang Kai-shek Memorial Hall are in close proximity to Taipei Tech.</p>
@@ -52,7 +83,7 @@
     
     <div-1>
       <h4>Some Graduates of Notice</h4>
-    <ul>
+    <ul style="list-style-type:circle">
       <li>Student A</li>
       <li>Student B</li>
     </ul>
