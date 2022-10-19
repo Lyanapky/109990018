@@ -59,6 +59,48 @@
     li span{
         color: gray;
     }
+    .container {
+    position: relative;
+    width: 50%;
+    text-align: center;
+    margin-left: absolute;
+
+    }
+
+    .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    }
+
+    .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    }
+
+    .container:hover .image {
+    opacity: 0.3;
+    }
+
+    .container:hover .middle {
+    opacity: 1;
+    }
+
+    .text {
+    background-color: #04AA6D;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    }
     
 </style>
 </head>
@@ -75,8 +117,15 @@
     <br>
 <div class="div-1">
     <br>
-   <a href="https://starsunfolded.com/shakira/"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Shakira_for_VOGUE_in_2021_2.png" title="Shakira" height="400px" width="300px"></a>
-    <h2 style="color: #9C2C77">Shakira</h2>
+    <div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Shakira_for_VOGUE_in_2021_2.png" title="Shakira" height="400px" width="300px" class="image" usemap="#workmap">
+    <div class="middle"><div class="text">I am Shakira</div></div>
+    <map name="workmap">
+        <area shape="rect" coords="253,233,97,112" alt="Shakira" href="https://starsunfolded.com/shakira/">
+        </map>
+    </div>
+   
+   <h2 style="color: #9C2C77">Shakira</h2>
     <h3 style="color: #CD104D">Songwriter and pop artist</h3>
 </div>
 
