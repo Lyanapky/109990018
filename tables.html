@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <script>
+       function chgBorder1(){
+             document.getElementById('table1').style.border="1px solid"
+        }
+        function chgBorder2(){
+             document.getElementById('table1').style.border="10px solid"
+        }
+        function chgBorder3(){
+             document.getElementById('table1').style.border="20px solid"
+        }
+        function chgwidth1(){
+             document.getElementById('table1').width="200px"
+        }
+        function chgwidth2(){
+             document.getElementById('table1').width="500px"
+        }
+        function chgcolor1(){
+             document.getElementById('table1').style.backgroundColor="#ffcccc"
+        }
+        function chgcolor2(){
+             document.getElementById('table1').style.backgroundColor="#ffcc99"
+        }
+        function chgcolor3(){
+             document.getElementById('table1').style.backgroundColor="#809fff"
+        }
+        function chgcolor4(){
+             document.getElementById('table1').style.backgroundColor="#d9b3ff"
+        }
+        function reset1(){
+             document.getElementById('table1').style.border="3"
+             document.getElementById('table1').style.backgroundColor="yellow"
+             document.getElementById('table1').style.width="300px"
+        }
+
+    </script>
+    <table id="table1" border="3"; width="300" style="text-align:center; background-color: yellow;">
+        <tr bgcolor="#99e6ff">
+            <th>Math</th>
+            <th>English</th>
+            <th>Programming</th>
+        </tr>
+        <tr >
+            <td>90</td>
+            <td>60</td>
+            <td>80</td>
+        </tr>
+        <tr >
+            <td>80</td>
+            <td>86</td>
+            <td>98</td>
+        </tr>
+    </table>
+    <br>
+    <p>Change the Table Width:</p>
+    <input type="button" onclick="chgwidth1()" value="200px">
+    <input type="button" onclick="chgwidth2()" value="500px">  
+
+    <p>Change the Border and Spacing Width:</p>
+    <input type="button" onclick="chgBorder1()" value="1px">
+    <input type="button" onclick="chgBorder2()" value="10px">
+    <input type="button" onclick="chgBorder3()" value="20px">
+
+    <p>Change the Table color:</p>
+    <input type="button" onclick="chgcolor1()" style="background-color:#ffcccc; padding: 10px;">
+    <input type="button" onclick="chgcolor2()" style="background-color:#ffcc99; padding: 10px;">
+    <input type="button" onclick="chgcolor3()" style="background-color:#809fff; padding: 10px;">
+    <input type="button" onclick="chgcolor4()" style="background-color:#d9b3ff; padding: 10px;">
+
+    <br>
+    <input type="button" onclick="reset1()" value="Reset">
+
+
+
+</html>
