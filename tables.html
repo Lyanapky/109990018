@@ -29,13 +29,13 @@
              document.getElementById('table1').style.backgroundColor="#d9b3ff"
         }
         function reset1(){
-             document.getElementById('table1').style.border="3"
+             document.getElementById('table1').style.border="3px"
              document.getElementById('table1').style.backgroundColor="yellow"
              document.getElementById('table1').style.width="300px"
         }
 
     </script>
-    <table id="table1" border="3"; width="300" style="text-align:center; background-color: yellow;">
+    <table id="table1" border="3px"; width="300" style=" border:3px; text-align:center; background-color: yellow;">
         <tr bgcolor="#99e6ff">
             <th>Math</th>
             <th>English</th>
@@ -63,10 +63,10 @@
     <input type="button" onclick="chgBorder3()" value="20px">
 
     <p>Change the Table color:</p>
-    <input type="button" onclick="chgcolor1()" style="background-color:#ffcccc; padding: 10px;">
-    <input type="button" onclick="chgcolor2()" style="background-color:#ffcc99; padding: 10px;">
-    <input type="button" onclick="chgcolor3()" style="background-color:#809fff; padding: 10px;">
-    <input type="button" onclick="chgcolor4()" style="background-color:#d9b3ff; padding: 10px;">
+    <input type="button" onclick="chgcolor1()" style="background-color:#ffcccc; padding: 10px; border-style: ridge;">
+    <input type="button" onclick="chgcolor2()" style="background-color:#ffcc99; padding: 10px; border-style: ridge;">
+    <input type="button" onclick="chgcolor3()" style="background-color:#809fff; padding: 10px; border-style: ridge;">
+    <input type="button" onclick="chgcolor4()" style="background-color:#d9b3ff; padding: 10px; border-style: ridge;">
 
     <br>
     <input type="button" onclick="reset1()" value="Reset">
