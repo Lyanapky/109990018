@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function drawCircle() {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            ctx.strokeStyle="#376b4d";
+            ctx.lineWidth=10;
+
+            var grd =ctx.createLinearGradient(0,0,200,0);
+            grd.addColorStop(0, "#376b4b");
+            grd.addColorStop(1, "#fcba03");
+            ctx.fillStyle =grd;
+
+            ctx.beginPath();
+            ctx.arc(100,100,50,0,Math.PI*2,true);
+
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.font ="30px Arial";
+            ctx.fillStyle="#FFFFFF";
+            ctx.fillText("Hi", 100,100);
+        }
+    </script>
+    <style>
+        canvas { border: 1px solid black;
+        }
+    </style>
+    <body>
+        <input type="button" value="Draw Circle" onclick="drawCircle();"><br/>
+        <canvas id="myCanvas" width="400" height = "200" style = "border: 1px solid;"></canvas>
+    </body>
+</html>
