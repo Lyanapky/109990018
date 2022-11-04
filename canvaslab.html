@@ -23,6 +23,41 @@
             ctx.fillStyle="#FFFFFF";
             ctx.fillText("Hi", 100,100);
         }
+        function draw(){
+            var canvas= document.getElementById("myCanvas2");
+            var ctx =canvas.getContext("2d");
+
+                var grd = ctx.createLinearGradient(200,0,400,0);
+                grd.addColorStop(0,"rgba(0,0,255,0.5)");
+                grd.addColorStop(1,"white");
+
+                var grd1 = ctx.createLinearGradient(200,200,400,0);
+                grd1.addColorStop(0,"red");
+                grd1.addColorStop(1,"white");
+
+            ctx.fillStyle = grd1;
+            ctx.fillRect (10,10,150,80);
+
+            ctx.fillStyle = grd;
+            ctx.fillRect (50,50,150,80);
+
+            ctx.strokeStyle ="green";
+            ctx.lineWidth = 10;
+            ctx.moveTo(0,95);
+            ctx.lineTo(40,95);
+            ctx.lineTo(40,150);
+            ctx.lineTo(250,150);
+            ctx.stroke();
+
+            ctx.font ="20px Arial";
+            ctx.fillStyle="pink";
+            ctx.fillText("Overlap", 80,80);
+
+            ctx.beginPath();
+            ctx.arc(200,50,5,1.5, 3,Math.PI*2,true);
+
+            ctx.fill();
+        }
     </script>
     <style>
         canvas { border: 1px solid black;
@@ -31,5 +66,8 @@
     <body>
         <input type="button" value="Draw Circle" onclick="drawCircle();"><br/>
         <canvas id="myCanvas" width="400" height = "200" style = "border: 1px solid;"></canvas>
+            <br>
+        <input type="button" value="Gradient" onclick="draw();"><br/>
+        <canvas id="myCanvas2" width="400" height = "200" style = "border: 1px solid;"></canvas>
     </body>
 </html>
