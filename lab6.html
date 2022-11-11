@@ -83,60 +83,80 @@ var myGameArea = {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 }
-
 function component(width, height, color, x, y) {
     this.width = width;
     this.height = height;
     this.x = x;
     this.y = y;
+    this.speedX = 0;
+    this.speedY = 0;
     this.bounce = 1;    
     this.update = function(){
         ctx = myGameArea.context;
         ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;        
+    }    
 }
 
-var do_red_x = 1, do_blue_x =1, do_yellow_x =1;
-var do_blue_y = 1, do_yellow_y = 1;
 function updateGameArea() {
-    myGameArea.clear();
+     myGameArea.clear();
 
-    if (redGamePiece.x == 400)
-        do_red_x = -1;
-        else if (redGamePiece.x == 0)
-        do_red_x = 1;
-    redGamePiece.x += do_red_x * 1;
-    
-    if (yellowGamePiece.x == 400)
-        do_yellow_x = -1;
-        else if (yellowGamePiece.x == 0)
-        do_yellow_x = 1;   
+    redGamePiece.newPos();
+    blueGamePiece.newPos();
+    yellowGamePiece.newPos();  
 
-    if (yellowGamePiece.y == 200)
-        do_yellow_y = -1;
-    else if (yellowGamePiece.y == 10)
-        do_yellow_y = 1;   
+    if(redGamePiece.x>= 480-75 || redGamePiece.x <= 0)
+        redGamePiece.speedX = -redGamePiece.speedX;
 
-    yellowGamePiece.x += do_yellow_x * 1;
-    yellowGamePiece.y += do_yellow_y * 1;
+    if(blueGamePiece.x>= 480-75 || blueGamePiece.x <= 0)
+        blueGamePiece.speedX = -blueGamePiece.speedX;
+    if(blueGamePiece.y>= 270-75 || blueGamePiece.y <= 0)
+        blueGamePiece.speedY = -blueGamePiece.speedY;
 
-    if (blueGamePiece.x == 400)
-        do_blue_x = -1;
-        else if (blueGamePiece.x == 0)
-        do_blue_x = 1;  
-
-    if (blueGamePiece.y == 200)
-        do_blue_y = 1;
-    else if (blueGamePiece.y == 10)
-        do_blue_y = -1;   
-
-    blueGamePiece.x += do_blue_x * 1;        
-    blueGamePiece.y -= do_blue_y * 1;            
+    if(yellowGamePiece.x>= 480-75 || yellowGamePiece.x <= 0)
+        yellowGamePiece.speedX = -yellowGamePiece.speedX;
+    if(yellowGamePiece.y>= 270-75 || yellowGamePiece.y <= 0)
+        yellowGamePiece.speedY = -yellowGamePiece.speedY;
+          
     redGamePiece.update();
     yellowGamePiece.update();        
     blueGamePiece.update();
 }
+function start(){
+    redGamePiece.speedX = 5;
+
+    yellowGamePiece.speedX = 1;
+    yellowGamePiece.speedY = 1;
+
+    blueGamePiece.speedX = 1;
+    blueGamePiece.speedY = 1;
+}
+function stop(){
+    redGamePiece.speedX = 0;
+
+    yellowGamePiece.speedX = 0;
+    yellowGamePiece.speedY = 0;
+
+    blueGamePiece.speedX = 0;
+    blueGamePiece.speedY = 0;
+
+}
+function reset1(){
+    myGameArea.clear();
+    redGamePiece = new component(75, 75, "red", 10, 10);
+    yellowGamePiece = new component(75, 75, "yellow", 50, 60);    
+    blueGamePiece = new component(75, 75, "blue", 10, 110);
+}
 </script>
-    </body>
-    </html>
+<div style="text-align: center; width:480px;">
+    <button onclick="start()">START</button>
+    <button onclick="stop()">STOP</button>
+    <button onclick="reset1()">RESET</button>
+
+</div>
+
+</html>
