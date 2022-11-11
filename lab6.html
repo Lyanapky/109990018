@@ -55,7 +55,7 @@ canvas {
         <li class="listyle"><a href="tables.html">Table exercise</a></li>
       </ul>
     <br>
-    
+    <div id="canvas"></div>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <body onload="startGame()">
@@ -71,7 +71,7 @@ function startGame() {
 }
 
 var myGameArea = {
-    canvas : document.createElement("canvas"),
+    canvas : document.getElementById("canvas").createElement("canvas"),
     start : function() {
         this.canvas.width = 480;
         this.canvas.height = 270;
